@@ -21,6 +21,7 @@ Once you have completed your entity, [compare with this one](https://dbdiagram.i
 
 ## Requirement - Part 3: Event Listeners
 
+<!-- resume here -->
 - As a user, I want to see 3 category(type) buttons rendered at the top of the page. Each should be a different color. These can be hard-coded in the HTML.
 - I want to be able to click one of the 3 buttons, then only the cards that are in the category(type) should show.
 - There should be some way for the user to unfilter the results (ie All Pets button).
