@@ -241,22 +241,39 @@ const pets = [
     }
   ];
 
-
-  let cards = '';
-  for (let pet of pets) {
+let cards = '';
+const displayCards = (array) => {
+  for (object of array) {
     cards += 
    `<div class="card element" style="width: 18rem;">
-    <img src="${pet.imageUrl}" class="card-img-top" alt="...">
+    <img src="${object.imageUrl}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">${pet.name}</h5>
-        <p class="card-text">color:${pet.color}</p>
-        <p>special skill: ${pet.specialSkill}</p>
-        <p>type: ${pet.type}</p>
+        <h5 class="card-title">${object.name}</h5>
+        <p class="card-text">color:${object.color}</p>
+        <p>special skill: ${object.specialSkill}</p>
+        <p>type: ${object.type}</p>
         <button class="delete" onclick="
         
         ">DELETE</button>
       </div>
     </div>`;
   }
- const app = document.querySelector('#app');
- app.innerHTML = cards;
+const app = document.querySelector('#app')
+app.innerHTML = cards
+}
+displayCards(pets);
+
+
+const catBtn = document.querySelector('#catbtn');
+
+const filterCats = () => {
+  let justCats = [];
+  for (obj of pets) {
+    if (obj.type === 'cat') {
+      justCats.push(obj);
+    }
+  }
+  displayCards(justCats);
+}
+
+catBtn.addEventListener('click', filterCats);
