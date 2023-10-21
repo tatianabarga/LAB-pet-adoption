@@ -241,8 +241,8 @@ const pets = [
     }
   ];
 
-let cards = '';
 const displayCards = (array) => {
+let cards = '';
   for (object of array) {
     cards += 
    `<div class="card element" style="width: 18rem;">
@@ -277,3 +277,32 @@ const filterCats = () => {
 }
 
 catBtn.addEventListener('click', filterCats);
+
+const dogBtn = document.querySelector('#dogbtn');
+
+const filterDogs = () => {
+  let justDogs = [];
+  for (obj of pets) {
+    if (obj.type === 'dog') {
+      justDogs.push(obj);
+    }
+  }
+  displayCards(justDogs);
+}
+
+dogBtn.addEventListener('click', filterDogs);
+
+
+const dinoBtn = document.querySelector('#dinobtn');
+
+const filterDinos = () => {
+  let justDinos = [];
+  for (obj of pets) {
+    if (obj.type === 'dino') {
+      justDinos.push(obj);
+    }
+  }
+  displayCards(justDinos);
+}
+
+dinoBtn.addEventListener('click', filterDinos);
