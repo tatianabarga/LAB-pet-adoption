@@ -32,6 +32,11 @@ body {
   color: rgb(88, 170, 170);
   font-family: Arial, Helvetica, sans-serif; 
 }
+.show {
+  background-color: rgb(212, 212, 250);
+  color: rgb(88, 170, 170);
+  font-family: Arial, Helvetica, sans-serif; 
+}
 .delete {
   background-color: rgb(57, 75, 116);
   color: rgb(253, 223, 228);

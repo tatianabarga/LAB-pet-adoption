@@ -241,29 +241,32 @@ const pets = [
     }
   ];
 
+  //display cards function
 const displayCards = (array) => {
 let cards = '';
   for (object of array) {
     cards += 
    `<div class="card element" style="width: 18rem;">
-    <img src="${object.imageUrl}" class="card-img-top" alt="...">
+    <img id="petImg" src="${object.imageUrl}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">${object.name}</h5>
-        <p class="card-text">color:${object.color}</p>
-        <p>special skill: ${object.specialSkill}</p>
-        <p>type: ${object.type}</p>
-        <button class="delete" onclick="
-        
-        ">DELETE</button>
+        <h5 class="card-title id="petName" ">${object.name}</h5>
+        <p class="card-text" id="petColor" >color:${object.color}</p>
+        <p id="petSkill" >special skill: ${object.specialSkill}</p>
+        <p id="petType" >type: ${object.type}</p>
+        <p 
+          <button id="delete--${object.id}" class="delete"
+          >delete</button>
+        </p> 
       </div>
     </div>`;
-  }
+  } //help
 const app = document.querySelector('#app')
 app.innerHTML = cards
 }
 displayCards(pets);
 
 
+// filter funtions
 const catBtn = document.querySelector('#catbtn');
 
 const filterCats = () => {
@@ -277,6 +280,7 @@ const filterCats = () => {
 }
 
 catBtn.addEventListener('click', filterCats);
+
 
 const dogBtn = document.querySelector('#dogbtn');
 
@@ -306,3 +310,55 @@ const filterDinos = () => {
 }
 
 dinoBtn.addEventListener('click', filterDinos);
+
+
+// clear filter function
+const showBtn = document.querySelector('#showbtn');
+showBtn.addEventListener('click', () => {displayCards(pets);
+});
+
+
+// create new form function
+
+const form = document.querySelector('form');
+
+const createPet = (e) => {
+  e.preventDefault();
+
+  
+
+  const newPetCard = {
+      id: pets.length + 1,
+      name: document.querySelector("#name-input").value,
+      color: document.querySelector("#color-input").value,
+      type: document.querySelector("#type-radio").value,
+      specialSkill: document.querySelector("#skill-input").value
+  }
+  console.log(newPetCard);
+  pets.push(newPetCard);
+  displayCards(pets);
+  form.reset();
+}
+
+form.addEventListener('submit', createPet);
+
+//delete function
+
+const app = document.querySelector("#app");
+app.addEventListener('click', (e) => {
+  if (e.target.id.includes("delete")) {
+    const [, id] = e.target.id.split("--");
+    const index = pets.findIndex((e) => e.id === Number(id));
+    pets.splice(index, 1);
+    displayCards(pets);
+  }
+});
+
+// const startApp = () => {
+//   displayCards(pets);
+// }
+
+// startApp();
+
+
+//if delete funciton not working: remove parenthises from line 348 around e, change 1 in 349 to i, check why we need lines 354-358

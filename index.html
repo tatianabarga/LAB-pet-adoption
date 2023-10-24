@@ -18,8 +18,39 @@
     <button id="dogbtn" class="dogs btn" onclick="
       
     ">Dogs</button>
+
+    <button id="showbtn" class="show btn"
+    
+    >Show All</button>
   </div>
   <div id="app"></div>
+
+  <form id="create">
+    <div class="name-section">
+      <label for="name-input" class="name-label">name</label>
+      <input type="text" class="nameInput" id="name-input">
+    </div>
+    <div class="color-section">
+      <label for="color-input" class="color-label">color</label>
+      <input type="text" class="colorInput" id="color-input">
+    </div>
+    <div class="skill-section">
+      <label for="skill-input" class="skill-label"> special skill</label>
+      <input type="text" class="skillInput" id="skill-input">
+    </div>
+    <div id="type-radio">
+      <input type="radio" class="catRadio" id="cat-radio" value="cat">
+      <label class="catRadioLabel" for="cat-radio">cat</label>
+
+      <input type="radio" class="dogRadio" id="dog-radio" value="dog">
+      <label class="dogRadioLabel" for="dog-radio">dog</label>
+      
+      <input type="radio" class="dinoRadio" id="dino-radio" value="dino">
+      <label class="dinoRadioLabel" for="dino-radio">dino</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
   <script src="main.js"></script>
 </body>
 </html>
