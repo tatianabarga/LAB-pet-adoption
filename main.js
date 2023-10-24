@@ -332,7 +332,8 @@ const createPet = (e) => {
       name: document.querySelector("#name-input").value,
       color: document.querySelector("#color-input").value,
       type: document.querySelector("input[name='pet-type']:checked").id,
-      specialSkill: document.querySelector("#skill-input").value
+      specialSkill: document.querySelector("#skill-input").value,
+      imageUrl: document.querySelector("#img-input").value
   }
   console.log(newPetCard);
   pets.push(newPetCard);
