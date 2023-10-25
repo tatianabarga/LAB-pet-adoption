@@ -44,6 +44,8 @@ body {
   border: none;
   height: 40px;
   padding: 9px;
+  display: flex;
+  justify-content: center;
 }
 .delete:hover {
   color: white;
@@ -65,9 +67,58 @@ body {
   background-color: rgb(253, 223, 228);
   margin: 4px;
   border: none;
-  /* border: solid rgb(57, 75, 116) 5px; */
-  /* border-radius: 40px; */
 }
 .card:hover {
   border: solid rgb(57, 75, 116) 5px;
+}
+
+.top-app {
+  display: flex;
+  justify-content: center;
+}
+#create {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  border: solid 10px rgb(57, 75, 116);
+  border-radius: 20px;
+  padding: 20px;
+  height: 350px;
+  width: 650px;
+  background-color: rgb(93, 109, 148);
+}
+.input {
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(178, 196, 236);
+  font-weight: bold;
+}
+.inputBox {
+   border: 5px solid rgb(178, 196, 236);
+   border-radius: 20px;
+   accent-color: rgb(77, 90, 122);
+   background-color: rgb(57, 75, 116);
+   margin: 10px;
+   font-family: Arial, Helvetica, sans-serif;
+  color: rgb(178, 196, 236);
+  font-weight: bold;
+}
+.sbmt-btn {
+  background-color: rgb(57, 75, 116);
+  color: rgb(178, 196, 236);
+  border-radius: 80px;
+  border: none;
+  height: 60px;
+  padding: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  margin: 20px;
+  font-weight: bold;
+}
+.sbmt-btn:hover {
+  border: solid rgb(178, 196, 236) 5px;
+  color: rgb(178, 196, 236);
+  background-color: rgb(57, 75, 116);
 }
