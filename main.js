@@ -301,24 +301,24 @@ const events = () => {
       filter(id); 
     }
   })
-
+  
   //create function
-  form.addEventListener('submit', createPet);
-  const createPet = (e) => {
+  form.addEventListener('submit', (e) => {
+ 
     e.preventDefault();
-
+    
     const newPetCard = {
-        id: pets.length + 1,
-        name: document.querySelector("#name-input").value,
-        color: document.querySelector("#color-input").value,
-        type: document.querySelector("input[name='pet-type']:checked").id,
-        specialSkill: document.querySelector("#skill-input").value,
-        imageUrl: document.querySelector("#img-input").value
+      id: pets.length + 1,
+      name: document.querySelector("#name-input").value,
+      color: document.querySelector("#color-input").value,
+      type: document.querySelector("input[name='pet-type']:checked").id,
+      specialSkill: document.querySelector("#skill-input").value,
+      imageUrl: document.querySelector("#img-input").value
     }
     pets.push(newPetCard);
     displayCards(pets);
-    form.reset();
-  }
+    // form.reset();
+  });
 }
 
 const startApp = () => {
