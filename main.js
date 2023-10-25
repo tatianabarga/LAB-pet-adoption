@@ -317,7 +317,7 @@ const events = () => {
     }
     pets.push(newPetCard);
     displayCards(pets);
-    form.reset(); //idk what this does
+    form.reset(); 
   });
 }
 
