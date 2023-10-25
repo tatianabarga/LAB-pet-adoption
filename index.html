@@ -8,36 +8,6 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  
-  <form id="create">
-    <div class="name-section">
-      <label for="name-input" class="name-label">name</label>
-      <input type="text" class="nameInput" id="name-input">
-    </div>
-    <div class="color-section">
-      <label for="color-input" class="color-label">color</label>
-      <input type="text" class="colorInput" id="color-input">
-    </div>
-    <div class="skill-section">
-      <label for="skill-input" class="skill-label"> special skill</label>
-      <input type="text" class="skillInput" id="skill-input">
-    </div>
-    <div class="img-section">
-      <label for="img-input" class="img-label"> image adress</label>
-      <input type="text" class="imgInput" id="img-input">
-    </div>
-    <div id="type-radio">
-      <input type="radio" class="catRadio" name="pet-type" id="cat">
-      <label class="catRadioLabel" for="cat">cat</label>
-
-      <input type="radio" class="dogRadio" name="pet-type" id="dog">
-      <label class="dogRadioLabel" for="dog">dog</label>
-      
-      <input type="radio" class="dinoRadio" name="pet-type" id="dino">
-      <label class="dinoRadioLabel" for="dino">dino</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
 
   <div class="top-app">
     <form id="create">
@@ -53,6 +23,11 @@
         <label for="skill-input" class="skill-label input"> special skill</label>
         <input type="text" class="skillInput inputBox" id="skill-input">
       </div>
+      <div class="img-section input">
+        <label for="img-input" class="img-label input"> image URL</label>
+        <input type="text" class="imgInput inputBox" id="img-input">
+      </div>
+
       <div id="type-radio">
         <input type="radio" class="catRadio inputBox" name="pet-type" id="cat">
         <label class="catRadioLabel input" for="cat">cat</label>
@@ -67,17 +42,23 @@
     </form>
   </div>
 
-  <div id="filter-buttons">
-    <button id="cat" class="cats btn">Cats</button>
+  <div id="filter-buttons" class="bttns">
+      <button id="cat" class="cats btn">Cats</button>
 
-    <button id="dino" class="dinos btn">Dinos</button>
+      <button id="dino" class="dinos btn" onclick="
+        
+      ">Dinos</button>
 
-    <button id="dog" class="dogs btn">Dogs</button>
+      <button id="dog" class="dogs btn" onclick="
+        
+      ">Dogs</button>
 
-    <button id="showbtn" class="show btn">Show All</button>
-  </div>
-  <div id="app"></div>
+      <button id="showbtn" class="show btn"
+      
+      >Show All</button>
+    </div>
 
+    <div id="app"></div>
 
   <script src="main.js"></script>
 </body>
