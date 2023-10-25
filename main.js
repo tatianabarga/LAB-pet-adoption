@@ -241,7 +241,7 @@ const pets = [
     }
   ];
 
-  //display cards function
+//display cards function
 const displayCards = (array) => {
 let cards = '';
   for (object of array) {
@@ -267,47 +267,18 @@ app.innerHTML = cards
 //filter function for filter buttons
 const filter = (petType) => {
   const filteredArray = [];
-  console.log(petType);
   for (pet of pets) {
     if (pet.type === petType) {
       filteredArray.push(pet);
     }
-    console.log(filteredArray);
   }
   displayCards(filteredArray);
 }
 
-// clear filter function
-// const showBtn = document.querySelector('#showbtn');
-// showBtn.addEventListener('click', () => {displayCards(pets);
-// });
-
-
-// create new form function
-const createPet = (e) => {
-  e.preventDefault();
-
-  const newPetCard = {
-      id: pets.length + 1,
-      name: document.querySelector("#name-input").value,
-      color: document.querySelector("#color-input").value,
-      type: document.querySelector("input[name='pet-type']:checked").id,
-      specialSkill: document.querySelector("#skill-input").value,
-      imageUrl: document.querySelector("#img-input").value
-  }
-  pets.push(newPetCard);
-  displayCards(pets);
-  form.reset();
-}
-
-
-// clean up functions
-
-
+//all events
 const events = () => {
   const app = document.querySelector("#app");
   const form = document.querySelector("form");
-
 
 //delete function
   app.addEventListener('click', (e) => { 
@@ -320,66 +291,34 @@ const events = () => {
   });
 
   // filter function
+  const filterButtons = document.querySelector("#filter-buttons");
+  filterButtons.addEventListener("click", (event) => {
+    const id = event.target.id;
+    
+    if (id === 'showbtn') {
+      displayCards(pets);
+    } else if (id === "cat" || id === "dog" || id === "dino") {
+      filter(id); 
+    }
+  })
 
-const filterButtons = document.querySelector("#filter-buttons");
-filterButtons.addEventListener("click", (event) => {
-  const id = event.target.id;
-  
-    console.log(id);
-  if (id === 'showbtn') {
-    displayCards(pets);
-  } else if (id === "cat" || id === "dog" || id === "dino") {
-    filter(id); 
-    console.log('we saw that')
-  }
-})
-
-// const catBtn = document.querySelector('#catbtn');
-
-// const filterCats = () => {
-//   let justCats = [];
-//   for (obj of pets) {
-//     if (obj.type === 'cat') {
-//       justCats.push(obj);
-//     }
-//   }
-//   displayCards(justCats);
-// }
-
-// catBtn.addEventListener('click', filterCats);
-
-
-// const dogBtn = document.querySelector('#dogbtn');
-
-// const filterDogs = () => {
-//   let justDogs = [];
-//   for (obj of pets) {
-//     if (obj.type === 'dog') {
-//       justDogs.push(obj);
-//     }
-//   }
-//   displayCards(justDogs);
-// }
-
-// dogBtn.addEventListener('click', filterDogs);
-
-
-// const dinoBtn = document.querySelector('#dinobtn');
-
-// const filterDinos = () => {
-//   let justDinos = [];
-//   for (obj of pets) {
-//     if (obj.type === 'dino') {
-//       justDinos.push(obj);
-//     }
-//   }
-//   displayCards(justDinos);
-// }
-
-// dinoBtn.addEventListener('click', filterDinos);
-
-//create function
+  //create function
   form.addEventListener('submit', createPet);
+  const createPet = (e) => {
+    e.preventDefault();
+
+    const newPetCard = {
+        id: pets.length + 1,
+        name: document.querySelector("#name-input").value,
+        color: document.querySelector("#color-input").value,
+        type: document.querySelector("input[name='pet-type']:checked").id,
+        specialSkill: document.querySelector("#skill-input").value,
+        imageUrl: document.querySelector("#img-input").value
+    }
+    pets.push(newPetCard);
+    displayCards(pets);
+    form.reset();
+  }
 }
 
 const startApp = () => {

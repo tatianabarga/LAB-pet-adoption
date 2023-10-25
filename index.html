@@ -8,17 +8,7 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <div id="filter-buttons">
-    <button id="cat" class="cats btn">Cats</button>
-
-    <button id="dino" class="dinos btn">Dinos</button>
-
-    <button id="dog" class="dogs btn">Dogs</button>
-
-    <button id="showbtn" class="show btn">Show All</button>
-  </div>
-  <div id="app"></div>
-
+  
   <form id="create">
     <div class="name-section">
       <label for="name-input" class="name-label">name</label>
@@ -48,6 +38,46 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+
+  <div class="top-app">
+    <form id="create">
+      <div class="name-section input">
+        <label for="name-input" class="name-label input">name</label>
+        <input type="text" class="nameInput inputBox" id="name-input">
+      </div>
+      <div class="color-section input">
+        <label for="color-input" class="color-label input">color</label>
+        <input type="text" class="colorInput inputBox" id="color-input">
+      </div>
+      <div class="skill-section input">
+        <label for="skill-input" class="skill-label input"> special skill</label>
+        <input type="text" class="skillInput inputBox" id="skill-input">
+      </div>
+      <div id="type-radio">
+        <input type="radio" class="catRadio inputBox" name="pet-type" id="cat">
+        <label class="catRadioLabel input" for="cat">cat</label>
+
+        <input type="radio" class="dogRadio inputBox" name="pet-type" id="dog">
+        <label class="dogRadioLabel input" for="dog">dog</label>
+        
+        <input type="radio" class="dinoRadio inputBox" name="pet-type" id="dino">
+        <label class="dinoRadioLabel input" for="dino">dino</label>
+      </div>
+      <button type="submit" class="btn-primary sbmt-btn">Submit</button>
+    </form>
+  </div>
+
+  <div id="filter-buttons">
+    <button id="cat" class="cats btn">Cats</button>
+
+    <button id="dino" class="dinos btn">Dinos</button>
+
+    <button id="dog" class="dogs btn">Dogs</button>
+
+    <button id="showbtn" class="show btn">Show All</button>
+  </div>
+  <div id="app"></div>
+
 
   <script src="main.js"></script>
 </body>
